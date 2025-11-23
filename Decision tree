@@ -1,3 +1,12 @@
+A Decision Tree is a supervised machine learning algorithm used for both classification and regression tasks.
+It works by splitting the data into branches based on feature values until the model reaches a final decision (leaf node).
+
+A decision tree resembles a flowchart:
+
+Root → Decision Nodes → Leaf Nodes
+
+
+
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.datasets import load_iris
 
