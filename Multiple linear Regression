@@ -1,0 +1,90 @@
+Multiple Linear Regression (MLR) is a supervised learning algorithm used to predict a continuous output using two or more input features.
+
+It's an extension of Simple Linear Regression, which uses only one feature
+
+Mathematical Formula
+𝑦
+=
+𝑏
+0
++
+𝑏
+1
+𝑥
+1
++
+𝑏
+2
+𝑥
+2
++
+.
+.
+.
++
+𝑏
+𝑛
+𝑥
+𝑛
+y=b
+0
+	​
+
++b
+1
+	​
+
+x
+1
+	​
+
++b
+2
+	​
+
+x
+2
+	​
+
++...+b
+n
+	​
+
+x
+n
+	​
+
+
+Where:
+
+y → Predicted output
+
+x₁, x₂ ... xₙ → Input features
+
+b₀ → Intercept
+
+b₁, b₂ ... bₙ → Coefficients (weights)
+
+
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Example dataset
+X = np.array([
+    [1000, 3],   # Area, Bedrooms
+    [1500, 4],
+    [800, 2],
+    [1200, 3],
+    [2000, 5]
+])
+
+y = np.array([50, 80, 40, 60, 100])  # Prices
+
+# Create model
+model = LinearRegression()
+model.fit(X, y)
+
+print("Coefficients:", model.coef_)
+print("Intercept:", model.intercept_)
+print("Prediction for [1800 sq ft, 4 bedrooms]:", model.predict([[1800, 4]]))
