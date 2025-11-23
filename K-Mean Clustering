@@ -1,0 +1,35 @@
+K-Means is an unsupervised machine learning algorithm used to group data into clusters based on similarity.
+It tries to partition the dataset into K distinct clusters, where each data point belongs to the cluster with the nearest mean (centroid)
+
+How K-Means Works (Step-by-Step)
+
+Select a value of K (number of clusters)
+
+Randomly initialize K centroids
+
+Assign each data point to its nearest centroid
+
+Recalculate centroids based on assigned points
+
+Repeat steps 3–4 until centroids stop changing (convergence)
+
+
+from sklearn.cluster import KMeans
+import numpy as np
+
+# Sample data
+data = np.array([
+    [1, 2],
+    [1, 4],
+    [1, 0],
+    [10, 2],
+    [10, 4],
+    [10, 0]
+])
+
+# Create model
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(data)
+
+print("Cluster Centers:", kmeans.cluster_centers_)
+print("Labels:", kmeans.labels_)
